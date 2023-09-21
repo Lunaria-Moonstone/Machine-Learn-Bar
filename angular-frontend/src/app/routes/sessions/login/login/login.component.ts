@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import axios from 'axios'
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-login',
@@ -6,5 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent {
-  allowLogin: boolean = true
+  
+  private readonly loginCheck: Function = () => this.loginMsg.name != '' && this.loginMsg.password != ''
+
+  allowLogin: boolean = false
+
+  loginMsg: { name: string, password: string } = { name: '', password: '' }
+
+  confirmLogin: Function = async () => {
+    if (! this.loginCheck()) return
+
+    try {
+      var user = await axios({
+        url: '/api/user/',
+        method: 'post',
+        data: this.loginMsg
+      })
+      // ...write in cookie
+    } catch (err) {
+      console.error(err)
+    }
+  }
 }
