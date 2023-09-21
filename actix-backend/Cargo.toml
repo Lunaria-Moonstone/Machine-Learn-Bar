@@ -1,0 +1,15 @@
+[package]
+name = "actix-backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = { version = "=0.5.0-rc.3", features = ["json"] }
+dotenv = "0.15.0"
+mysql = "24.0.0"
+once_cell = { version = "1.13.0", features = [] }
+log = "0.4.20"
+serde = { version = "1.0.188", features = ["derive"] }
+rust-crypto = "0.2.36"
