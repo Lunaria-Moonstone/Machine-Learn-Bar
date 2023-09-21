@@ -1,0 +1,44 @@
+$bodyColor: #000
+$boxColor: #fff
+
+*
+  padding: 0
+  margin: 0
+
+/*
+ * 背景
+ */
+.background 
+  position: relative
+  display: flex
+  min-height: 100%
+  justify-content: center
+  align-content: center
+  background-color: #212121
+  // background-image: linear-gradient(45deg,rgba(255,255,255,.05) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.05) 75%,rgba(255,255,255,.05)),linear-gradient(-45deg,rgba(255,255,255,.05) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.05) 75%,rgba(255,255,255,.05))
+  background-image: linear-gradient(30deg, #e66465, #9198e5)
+  z-index: -999
+
+.login-box
+  position: absolute
+  top: 50vh
+  left: 50vw
+  margin-top: - calc(42vh / 2)
+  margin-left: - calc(28vw / 2)
+  width: 28vw
+  height: 42vh
+  min-width: 430px
+  min-height: 350px
+
+mat-card
+  display: flex
+  height: 100%
+  width: 100%
+  justify-content: space-evenly
+
+
+  .input-field
+    min-width: 100%
+  
+
+  
