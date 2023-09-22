@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './routes/sessions/login/login/login.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'login', pathMatch: 'prefix'},
   {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

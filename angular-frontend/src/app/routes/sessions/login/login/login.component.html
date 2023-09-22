@@ -8,15 +8,22 @@
       <form>
         <mat-form-field class="input-field">
           <mat-label>用户名</mat-label>
-          <input matInput autocomplete="off" placeholder="请输入用户名" [(ngModel)]="loginMsg.username"/>
+          <input #name matInput autocomplete="off" placeholder="请输入用户名" (input)="changeName(name.value)" />
         </mat-form-field>
         <mat-form-field class="input-field">
           <mat-label>密码</mat-label>
-          <input matInput type="password" autocomplete="off" placeholder="请输入密码" [(ngModel)]="loginMsg.password"/>
+          <input #password matInput type="password" autocomplete="off" placeholder="请输入密码" (input)="changePassword(password.value)"/>
         </mat-form-field>
-        <button mat-raised-button color="primary" style="min-width: 100%;" disabled="{{!allowLogin}}">登录</button>
+        <button mat-raised-button color="{{styles.btnStyle}}" style="min-width: 100%;" disabled="{{!allowLogin}}" (click)="confirmLogin()">{{shownMsg.btnMsg}}</button>
       </form>
     </mat-card-content>
-    <mat-card-footer>footer</mat-card-footer>
+    
+    <mat-card-footer>
+      <mat-divider></mat-divider>
+      <div class="footer-tip">
+        还未拥有账户？
+        <a href="">点此注册</a>
+      </div>
+    </mat-card-footer>
   </mat-card>
 </div>
